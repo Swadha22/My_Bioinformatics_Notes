@@ -619,15 +619,15 @@ My Cheat Sheet
         bedGraphToBigWig pgc.10K.bg ~/Documents/Strome_Lab/Bioinformatics_Workshop/Generating_browser_tracks/ce10.fai.txt pgc.10K.bw 
 
 
-        Counting number of mapped reads of all the chromosomes except MtDNA and X
+## Counting number of mapped reads of all the chromosomes except MtDNA and X
         samtools view -b sortedByCoord.out.bam I II III IV V | samtools view -c -F 4
 
 
 
-        Sorting bedgraph_file
+## Sorting bedgraph_file
         sort -k1,1 -k2,2 unsorted.bedGraph > sorted.bedGraph
 
-        Scaling in all the 33 files using bash loop (input file has two columns, first will be in variable 1: “filename”, and 2nd column will be used in variable 2, “scale_factor”)
+## Scaling in all the 33 files using bash loop (input file has two columns, first will be in variable 1: “filename”, and 2nd column will be used in variable 2, “scale_factor”)
         while IFS= read -r line
                    do         
             filename=$(echo "$line" | cut -f 1)
@@ -637,11 +637,11 @@ My Cheat Sheet
                    done < filenames.txt
 
 
-        To calculate mean fragment length
+## To calculate mean fragment length
         java -jar picard.jar CollectInsertSizeMetrics I=/home/roylab/swadha/histone/RNAseq_analysis/1_all_bam_files/male_germ_WT_N2-12_mappedAligned.sortedByCoord.out.bam O= /home/roylab/swadha/histone/RNAseq_analysis/output.txt H=insert_size_histogram.pdf M=0.5
 
 
-        UCSC tools
+## UCSC tools
         http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/
 
 
